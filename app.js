@@ -4,7 +4,6 @@ const path = require('path');
 const db = require('./config/database');
 const users = require("./routes/api/users");
 const pg = require('pg');
-
 const bodyParser = require("body-parser");
 
 
