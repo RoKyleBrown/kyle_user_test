@@ -4,7 +4,6 @@ import { getUsers } from '../../actions/user_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-    debugger;
     return {
         users: state.users.all,
     }

@@ -1,3 +1,5 @@
-const { Sequelize } = require('sequelize');
-
-module.exports = new Sequelize('postgres://postgres:password123@localhost:5433/kyle_streamlytics') 
+if (process.env.NODE_ENV === 'production') {
+    module.exports = require('./prod_database');
+} else {
+    module.exports = require('./dev_database');
+}
