@@ -1,4 +1,6 @@
 if (process.env.NODE_ENV === 'production') {
+    console.log(process.env);
+    console.log('in pro -kb');
     module.exports = require('./prod_database');
 } else {
     module.exports = require('./dev_database');
