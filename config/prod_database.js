@@ -1,5 +1,5 @@
 const { Sequelize } = require('sequelize');
-const { Client } = require('pg');
+require('dotenv').config();
 
 // module.exports = new Sequelize(`${process.env.Database}`, `${process.env.User}`, 
 //     `${process.env.Password}`, {
@@ -9,17 +9,9 @@ const { Client } = require('pg');
 
 // module.exports = new Sequelize('postgres://robertkbrown:@localhost:5432/kyle_technical_test') 
 
-const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false
-    }
-});
 
-client.connect();
-debugger;
-module.exports = new Sequelize(`${process.env.Database}`, `${process.env.User}`, 
-    `${process.env.Password}`, {
-        host: `${process.env.Host}`,
+module.exports = new Sequelize(`${process.env.DB_DATABASE}`, `${process.env.DB_USERNAME}`, 
+    `${process.env.DB_PASSWORD}`, {
+        host: `${process.env.DB_HOST}`,
     dialect: 'postgres'
 });
