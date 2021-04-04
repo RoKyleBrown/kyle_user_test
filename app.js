@@ -5,7 +5,6 @@ const db = require('./config/database');
 const users = require("./routes/api/users");
 const pg = require('pg');
 const bodyParser = require("body-parser");
-const http_redirect = require('./http_redirect')
 
 
 app.use(bodyParser.json());
