@@ -5,6 +5,7 @@ const db = require('./config/database');
 const users = require("./routes/api/users");
 const pg = require('pg');
 const bodyParser = require("body-parser");
+const http_redirect = require('./http_redirect')
 
 
 app.use(bodyParser.json());
@@ -12,6 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('frontend/build'));
+    httpRedirect();
     app.get('/', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
     })
