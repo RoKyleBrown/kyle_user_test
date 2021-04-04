@@ -5,22 +5,15 @@ const db = require('./config/database');
 const users = require("./routes/api/users");
 const pg = require('pg');
 const bodyParser = require("body-parser");
+const sslRedirect = require('heroku-ssl-redirect');
 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 if (process.env.NODE_ENV === 'production') {
+    app.use(sslRedirect());
     app.use(express.static('frontend/build'));
-    app.use((req, res, next) => {
-        debugger;
-        console.log(req.header);
-        console.log(req);
-        if (req.header('x-forwarded-proto') !== 'https')
-            res.redirect(`https://${req.header('host')}${req.url}`);
-        else
-            next();
-    })
     app.get('/', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
     })
