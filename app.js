@@ -13,6 +13,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('frontend/build'));
     app.use((req, res, next) => {
+        debugger;
+        console.log(req.header);
+        console.log(req);
         if (req.header('x-forwarded-proto') !== 'https')
             res.redirect(`https://${req.header('host')}${req.url}`);
         else
