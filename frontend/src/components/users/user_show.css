@@ -8,6 +8,7 @@
 
 #load-gif video {
     width: 100px;
+    z-index: 3;
 }
 
 /* desktop */

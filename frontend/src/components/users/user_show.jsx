@@ -14,12 +14,12 @@ const UserShow = (props) => {
 
     if (isLoading==true) {
         return (
-            <LoadGif/>
+            <LoadGif/> 
         )
     } else {
         return (
             <div id="show-container">
-                {/* {props.users.map(user => user.email)} */}
+                {props.users.map(user => user.email)}
             </div>
         )
     }
