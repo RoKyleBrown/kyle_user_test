@@ -1,10 +1,10 @@
 import React from 'react';
-import loadGif from '../../assets/profiler-logo.gif'
+import loadGif from '../../assets/profiler-logo2.mp4'
 
 const LogoGif = () => {
     return (
         <div id="load-gif">
-            <img  src={loadGif} alt="" />
+            <video loop muted autoPlay  src={loadGif} alt="" />
         </div>
     )
 }
