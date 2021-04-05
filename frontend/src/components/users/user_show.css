@@ -11,11 +11,19 @@
     z-index: 3;
 }
 
+#load-gif img {
+    width: 100px;
+}
+
 /* desktop */
 @media only screen and (min-width: 2000px){
     #load-gif video {
         width: 200px;
     }
+
+    #load-gif img {
+    width: 200px;
+}
 }
 
 #show-container {
