@@ -22,7 +22,12 @@
     width: 1000px;
     height: 700px;
     background-color: violet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+/* mobile */
 
 @media only screen and (max-width: 1000px) {
     #show-container {
@@ -30,8 +35,16 @@
     }
 }
 
+/* intermediate */
+@media only screen and (min-width: 1400px){
+    #show-container {
+        height: 910px;
+        width: 1300px;
+    }
+}
+
 /* windows1 */
-@media only screen and (min-width: 2000px){
+@media only screen and (min-width: 1700px){
     #show-container {
         height: 1050px;
         width: 1500px;
@@ -44,3 +57,43 @@
         width: 2000px;
     }
 }
+
+/*adjusts flex on media query*/
+.profile {
+    height: 70%;
+    width: 100%;
+    background-color: maroon;
+    display: flex;
+}
+
+
+#mod1-contain {
+    height: 100%;
+    width: 50%;
+    background-color: black;
+}
+#mod2-contain {
+    height: 100%;
+    width: 50%;
+    background-color: yellow;
+}
+
+@media (orientation:portrait) {
+    #show-container {
+        height: 1200px;
+    }
+    .profile {
+        flex-direction: column;
+    }
+
+    #mod1-contain, #mod2-contain {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-height: 1200px){
+    #show-container {
+        height: 100vh;
+    }
+}
+

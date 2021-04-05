@@ -19,7 +19,13 @@ const UserShow = (props) => {
     } else {
         return (
             <div id="show-container">
-                {/* {props.users.map(user => user.email)} */}
+                <div className="profile">
+                    {/* {props.users.map(user => user.email)} */}
+                    {/* pic/name */}
+                    <div id="mod1-contain"></div>
+                    <div id="mod2-contain"></div>
+                    {/* info */}
+                </div>
             </div>
         )
     }
