@@ -6,13 +6,13 @@
     justify-content: center;
 }
 
-#load-gif video {
+#load-gif img {
     width: 100px;
 }
 
 /* desktop */
 @media only screen and (min-width: 2000px){
-    #load-gif video {
+    #load-gif img {
         width: 200px;
     }
 }
