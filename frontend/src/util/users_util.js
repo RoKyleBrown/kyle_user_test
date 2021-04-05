@@ -4,3 +4,8 @@ import axios from 'axios';
     const data = await axios.get('/api/users/');
     return data;
 };
+
+ export const getUser = async (email) => {
+    const data = await axios.get(`/api/users/${email}/`);
+    return data;
+};

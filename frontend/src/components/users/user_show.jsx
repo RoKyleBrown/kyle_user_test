@@ -3,16 +3,15 @@ import LoadGif from '../preload/logo_gif';
 import './user_show.css';
 import ModOne from './modules/mod_one';
 import aviBack from '../../assets/avi_back.png';
-import avi from '../../assets/candi.jpeg';
 import ModTwo from './modules/mod_two';
 import burger from '../../assets/burger.png';
-import { dropDown } from '../app';
+import { dropDown } from '../application';
 
 const UserShow = (props) => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        props.getUsers();
+        props.getUser("ab@streamlytics.co");
         setTimeout(() => {
             setIsLoading(false);
         }, 2500);
@@ -37,15 +36,13 @@ const UserShow = (props) => {
                     </div>
                 </div>
                 <div className="profile">
-                    {/* {props.users.map(user => user.email)} */}
-                    {/* pic/name */}
                     <div id="mod1-contain">
                         <div className="avi-contain">
                             <div className="avi-flex">
-                                <img className="avi" src={avi} alt="avitar" />
+                                <img className="avi" src={props.user.photos} alt="avitar" />
                             </div>
                             <img className="avi-back" src={aviBack} alt="avi-back" />
-                            <div id="name-contain"><h2>Candi Coe</h2></div>
+                            <div id="name-contain"><h2>{props.user.full_name}</h2></div>
                         </div>
                         <div className="mod-image">
                             <ModOne />
@@ -53,7 +50,7 @@ const UserShow = (props) => {
                         
                     </div>
                     <div id="mod2-contain">
-                        <ModTwo />
+                        <ModTwo user={props.user}/>
                     </div>
                     {/* info */}
                 </div>

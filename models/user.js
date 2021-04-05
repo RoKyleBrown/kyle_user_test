@@ -32,6 +32,10 @@ const User = db.define('user', {
         type: Sequelize.BIGINT,
         allowNull: false
     },
+    photos: {
+        type: Sequelize.STRING,
+        allowNull: true
+    },
 });
 
 module.exports = User;
