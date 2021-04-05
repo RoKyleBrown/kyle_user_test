@@ -1,0 +1,30 @@
+#load-gif {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#load-gif img {
+    width: 100px;
+}
+
+/* desktop */
+@media only screen and (min-width: 2000px){
+    #load-gif img {
+        width: 200px;
+    }
+}
+
+#show-container {
+    width: 1000px;
+    height: 700px;
+    background-color: violet;
+}
+
+@media only screen and (max-width: 1000px) {
+    #show-container {
+        width: 100;
+    }
+}

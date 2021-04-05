@@ -1,6 +1,13 @@
-html {
+/* html {
     background-image: url('../assets/show-back.jpg');
     background-repeat: repeat;
     background-size:cover;
     background-position: center;
+} */
+
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
