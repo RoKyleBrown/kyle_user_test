@@ -5,10 +5,10 @@ const ModOne = () => {
 
     
 
-    let photoUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=1000&photoreference=ATtYBwKCCyu1oxjMqjGyh--I-toAaJXhMDqEdJ9n6c3Rv2EcD9D6MJFnVB8Ahza6xwJvfL67utK_2j5amF4TepFV4ONPu6IklwqQYgFKL6dOD32tD7bWQ180Vp8ph1tmcrJVlEdVVkDuWNpNu920XCHwnrmHHmBLfogpEQVq-MlwWWfbwovB&key=AIzaSyAmen9kYggzGMA5XU8lAFWPi5UypUUneEs`;
+    let photoUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=1000&photoreference=ATtYBwIf8wfgYeqO5bi_wZ7ThyjgynLbLr8npDBSiDog8NaQTPhROVf8oMlr3OBHpHtTmouZGBnmuRRuv_HnxQ0IlTDIyKcm6-iomIBW9WUcR8nT5R16MQ53cFRwtXAx-9YrmVcPe8p14D1opYn9WgoCKMi08ZNCvL-_bkGdF-GWnATRpamG&key=AIzaSyAmen9kYggzGMA5XU8lAFWPi5UypUUneEs`;
     return (
         <div className="mod1">
-            <img className="back1" src={photoUrl} alt=""/>
+            <img className="back1" src={photoUrl} alt="photo"/>
         </div>
     )
 }

@@ -26,10 +26,13 @@
 }
 }
 
+html {
+    background-color: #ffdede;
+}
+
 #show-container {
     width: 1000px;
     height: 700px;
-    background-color: violet;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,11 +69,56 @@
     }
 }
 
+#nav {
+    width: 100%;
+    top: 0;
+    height: 45px;
+    position: absolute;
+    z-index: 12;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#nav img {
+    width: 25px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+
+
+.drop-down {
+    display: none;
+}
+
+.drop-down-clicked {
+    top: 45px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 20px;
+    padding: 10px 10px 10px 15px;
+    background-color: #673ab7;
+}
+
+.drop-down-clicked p {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    margin-bottom: 2px;
+    color: white;
+}
+.drop-down-clicked p:hover {
+    cursor: pointer;
+}
+
+
 /*adjusts flex on media query*/
 .profile {
     height: 70%;
     width: 100%;
-    background-color: maroon;
     display: flex;
 }
 
@@ -78,7 +126,6 @@
 #mod1-contain {
     height: 100%;
     width: 50%;
-    background-color: black;
     overflow: hidden;
     /* display: flex;
     align-items: center;
@@ -89,10 +136,21 @@
     height: 100%;
     width: 100%;
     position: relative;
-    /* background-color: lime; */
     z-index: 5;
     display: flex;
     align-items: flex-end;
+}
+
+.avi-contain #name-contain{
+    z-index: 8;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Helvetica, sans-serif;
+    font-size: 13px;
+    color: white;
 }
 
 .avi-back {
@@ -114,7 +172,7 @@
     position: relative;
     z-index: 7;
     border-radius: 50%;
-    width: 150px;
+    width: 125px;
     /* margin-bottom: 23%; */
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
@@ -134,7 +192,6 @@
 #mod2-contain {
     height: 100%;
     width: 50%;
-    background-color: yellow;
     overflow: hidden;
     display: flex;
     align-items: center;

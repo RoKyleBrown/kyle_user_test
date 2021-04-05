@@ -4,6 +4,9 @@ import './user_show.css';
 import ModOne from './modules/mod_one';
 import aviBack from '../../assets/avi_back.png';
 import avi from '../../assets/candi.jpeg';
+import ModTwo from './modules/mod_two';
+import burger from '../../assets/burger.png';
+import { dropDown } from '../app';
 
 const UserShow = (props) => {
     const [isLoading, setIsLoading] = useState(true);
@@ -22,15 +25,27 @@ const UserShow = (props) => {
     } else {
         return (
             <div id="show-container">
+                <div id="nav">
+                    <div>
+                        <img className="burger" src={burger} 
+                        onClick={(e) => dropDown(e)}
+                        alt="drop-down"/>
+                    </div>
+                    <div className="drop-down">
+                        <p>Search</p>
+                        <p>Log Out</p>
+                    </div>
+                </div>
                 <div className="profile">
                     {/* {props.users.map(user => user.email)} */}
                     {/* pic/name */}
                     <div id="mod1-contain">
                         <div className="avi-contain">
                             <div className="avi-flex">
-                                <img className="avi" src={avi} />
+                                <img className="avi" src={avi} alt="avitar" />
                             </div>
-                            <img className="avi-back" src={aviBack} />
+                            <img className="avi-back" src={aviBack} alt="avi-back" />
+                            <div id="name-contain"><h2>Candi Coe</h2></div>
                         </div>
                         <div className="mod-image">
                             <ModOne />
@@ -38,7 +53,7 @@ const UserShow = (props) => {
                         
                     </div>
                     <div id="mod2-contain">
-                        <ModOne />
+                        <ModTwo />
                     </div>
                     {/* info */}
                 </div>

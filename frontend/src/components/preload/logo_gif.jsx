@@ -12,7 +12,7 @@ const LogoGif = () => {
             muted loop src={loadGif}
             />
 
-            <img style={{zIndex:"0", position:"absolute"}} src={logo}/>
+            <img style={{zIndex:"0", position:"absolute"}} src={logo} alt="logo"/>
 
         </div>
     )
