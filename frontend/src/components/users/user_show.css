@@ -44,7 +44,7 @@
 }
 
 /* intermediate */
-@media only screen and (min-width: 1400px){
+@media (orientation:landscape) and (min-width: 1400px){
     #show-container {
         height: 910px;
         width: 1300px;
@@ -79,27 +79,114 @@
     height: 100%;
     width: 50%;
     background-color: black;
+    overflow: hidden;
+    /* display: flex;
+    align-items: center;
+    justify-content: flex-end; */
 }
+
+.avi-contain {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    /* background-color: lime; */
+    z-index: 5;
+    display: flex;
+    align-items: flex-end;
+}
+
+.avi-back {
+  position: relative;
+  height: 40%;
+  width: 100%;
+}
+
+.avi-flex {
+    height: 40%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.avi {
+    position: relative;
+    z-index: 7;
+    border-radius: 50%;
+    width: 150px;
+    /* margin-bottom: 23%; */
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.mod-image {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: -100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
 #mod2-contain {
     height: 100%;
     width: 50%;
     background-color: yellow;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
 }
+
+
 
 @media (orientation:portrait) {
     #show-container {
-        height: 1200px;
+        height: 1300px;
     }
     .profile {
         flex-direction: column;
+        height: 100%;
     }
 
-    #mod1-contain, #mod2-contain {
+    #mod1-contain {
         width: 100%;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    #mod2-contain {
+        width: 100%;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .avi-back {
+        height: 25%;
+    }
+
+    .avi-flex {
+        height: 25%;
+    }
+    .avi {
+        width: 100px;
     }
 }
 
-@media only screen and (max-height: 1200px){
+@media (orientation: portrait) and (max-width: 500px) {
+    #show-container {
+        height: 1000px;
+    }
+    
+    .avi {
+        width: 75px;
+    }
+}
+
+@media (orientation:landscape) and (max-height: 1200px){
     #show-container {
         height: 100vh;
     }

@@ -1,0 +1,12 @@
+.mod1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mod1 .back1 {
+  height: 100%;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  
+}
