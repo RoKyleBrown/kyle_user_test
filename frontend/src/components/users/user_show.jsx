@@ -13,6 +13,7 @@ const UserShow = (props) => {
     const { logout, currentUser } = useAuth();
 
 
+
     useEffect(() => {
         props.getUser(currentUser.email);
         setTimeout(() => {

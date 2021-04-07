@@ -22,6 +22,28 @@ export const dropDown = (e) => {
     
 };
 
+window.addEventListener('wheel', (e) => {
+    
+    if (document.body.scrollTop !== 0) {
+
+        $(".burger").addClass("burger-b");
+        dropDown(e);
+    } else {
+        $(".burger").removeClass("burger-b");
+        $(".burger-open").removeClass("burger-b");
+    }
+})
+window.addEventListener('resize', (e) => {
+    
+    if (document.body.scrollTop !== 0) {
+
+        $(".burger").addClass("burger-b");
+    } else {
+        $(".burger").removeClass("burger-b");
+        $(".burger-open").removeClass("burger-b");
+    }
+})
+
 const App = () => {
 
     return (
