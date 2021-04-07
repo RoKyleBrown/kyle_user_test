@@ -9,7 +9,7 @@ import gender from '../../../assets/gender.png';
 
 
 const ModTwo = (props) => {
-    debugger;
+    
     return (
         <div className="mod2">
             <div className="top">

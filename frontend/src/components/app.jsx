@@ -9,7 +9,7 @@ import Login from './auth/login';
 import PrivateRoute from "./private-route";
 
 export const dropDown = (e) => {
-    debugger;
+    
     if ( e.target.classList[0] === "burger"){
         $(".drop-down").addClass("drop-down-clicked");
         $(".burger").addClass("burger-open");

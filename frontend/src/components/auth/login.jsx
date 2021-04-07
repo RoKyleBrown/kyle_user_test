@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { useAuth } from '../../contexts/auth-context';
 import { useHistory } from 'react-router-dom';
 import './auth.css'
-import logoAuth from '../../assets/icon-512x512.png'
+import logoAuth from '../../assets/icon-512x512.jpg'
 
 const Login = () => {
     const { login } = useAuth();
@@ -30,7 +30,7 @@ const Login = () => {
 
             <div className="auth-flex">
                 <div id="logo-auth">
-                        <img src={logoAuth} alt="logo" />
+                        <img width="256px" src={logoAuth} alt="logo" />
                     </div>
                     <form className="auth-form" onSubmit={handleSubmit}>
 

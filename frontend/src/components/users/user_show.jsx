@@ -12,7 +12,6 @@ const UserShow = (props) => {
     const [isLoading, setIsLoading] = useState(true);
     const { logout, currentUser } = useAuth();
 
-    debugger;
 
     useEffect(() => {
         props.getUser(currentUser.email);
