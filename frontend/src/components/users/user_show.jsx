@@ -5,19 +5,23 @@ import ModOne from './modules/mod_one';
 import aviBack from '../../assets/avi_back.png';
 import ModTwo from './modules/mod_two';
 import burger from '../../assets/burger.png';
-import { dropDown } from '../application';
+import { dropDown } from '../app';
+import { useAuth } from '../../contexts/auth-context';
 
 const UserShow = (props) => {
     const [isLoading, setIsLoading] = useState(true);
+    const { logout, currentUser } = useAuth();
+
+    debugger;
 
     useEffect(() => {
-        props.getUser("ab@streamlytics.co");
+        props.getUser(currentUser.email);
         setTimeout(() => {
             setIsLoading(false);
         }, 2500);
     }, [])
 
-    if (isLoading==true) {
+    if (isLoading===true) {
         return (
             <LoadGif/> 
         )
@@ -32,7 +36,13 @@ const UserShow = (props) => {
                     </div>
                     <div className="drop-down">
                         <p>Search</p>
-                        <p>Log Out</p>
+                        <p onClick={async () => {
+                                try {
+                                    await logout();
+                                    props.history.push('/login')
+                                } catch {}
+                            }}
+                        >Log Out</p>
                     </div>
                 </div>
                 <div className="profile">

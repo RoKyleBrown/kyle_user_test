@@ -36,10 +36,3 @@ router.get(`/:email`, async (req, res) => {
 
 
 module.exports = router;
-
-
-//login
-//logout
-//update
-//showpage
-//index -- user seach (firebase?)

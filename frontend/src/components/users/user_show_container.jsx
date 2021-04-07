@@ -6,6 +6,7 @@ import { getUser } from '../../actions/user_actions';
 const mapStateToProps = (state, ownProps) => {
     return {
         user: state.users.all,
+        history: ownProps.history
     }
 }
 

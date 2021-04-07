@@ -1,8 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import UserShowContainer from './users/user_show_container';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { AuthProvider } from '../contexts/auth-context';
+import Signup from './auth/signup';
 import './app.css';
 import $ from 'jquery';
+import Login from './auth/login';
+import PrivateRoute from "./private-route";
 
 export const dropDown = (e) => {
     debugger;
@@ -21,13 +25,15 @@ export const dropDown = (e) => {
 const App = () => {
 
     return (
-    
         <div id="app" >
-                <Switch>
-                    <Route path="/" component={UserShowContainer}/>
-                </Switch>
-
-        </div>
+                    <AuthProvider>
+                            <Switch>
+                                <PrivateRoute exact path='/' component={UserShowContainer} />
+                                <Route path='/signup' component={Signup} />
+                                <Route path='/login' component={Login} />
+                            </Switch>
+                    </AuthProvider>
+            </div>
     )
 };
 
