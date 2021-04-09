@@ -108,17 +108,122 @@
 #db-data {
     width: 100%;
     height: 50%;
-    background-color: teal;
     display: flex;
 }
 
 #db-left {
     width: 50%;
     height: 100%;
-    background-color: green;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-right: 12px;
+    margin-bottom: 16px;
 }
 #db-right {
     width: 50%;
     height: 100%;
-    background-color: fuchsia;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-left: 22px;
+    margin-bottom: 16px;
+}
+
+.update-phone-txt {
+    display: block;
+}
+
+.update-phone-txt-b {
+    display: none;
+}
+
+.update-phone-input {
+    display: none;
+}
+
+.update-phone-input-b {
+    display: block;
+    width: 120px;
+    padding: 0;
+    border: none;
+}
+
+
+#phone-form {
+    display: flex;
+    align-items: center;
+}
+
+#phone-form p {
+   font-size: 12px;
+   width: 120px;
+}
+
+#phone-form button {
+    height: 24px;
+    width: 57px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-left: 3px;
+}
+
+#phone-form input {
+    outline: none;
+    color: #673ab7;
+    background-color: rgba(231, 213, 213, 0);
+}
+
+/* ~~~~~~ */
+
+.update-zip-txt {
+    display: block;
+}
+
+.update-zip-txt-b {
+    display: none;
+}
+
+.update-zip-input {
+    display: none;
+}
+
+.update-zip-input-b {
+    display: block;
+    width: 60px;
+    padding: 0;
+    border: none;
+}
+
+
+#zip-form {
+    display: flex;
+    align-items: center;
+}
+
+#zip-form p {
+   font-size: 12px;
+   width: 60px;
+}
+
+#zip-form button {
+    height: 24px;
+    width: 57px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-left: 3px;
+}
+
+#zip-form input {
+    outline: none;
+    color: #673ab7;
+    background-color: rgba(231, 213, 213, 0);
 }

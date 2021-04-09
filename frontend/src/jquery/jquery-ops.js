@@ -43,14 +43,14 @@ export const editAction = (e, index) => {
 
      if (index === 0){
          $(`.update-${actionType}-txt`).addClass(`update-${actionType}-txt-b`);
-         $(`.update-${actionType}-input`).addClass(`update-pwd-input-b`);
+         $(`.update-${actionType}-input`).addClass(`update-${actionType}-input-b`);
          if (actionType === "pwd") {
             
              $(".pw-btn").addClass("pw-btn-open");
          }
      } else {
          $(`.update-${actionType}-txt`).removeClass(`update-${actionType}-txt-b`);
-         $(`.update-${actionType}-input`).removeClass(`update-pwd-input-b`);
+         $(`.update-${actionType}-input`).removeClass(`update-${actionType}-input-b`);
          if (actionType === "pwd") {
              $(`.pw-btn`).removeClass(`pw-btn-open`)
          }

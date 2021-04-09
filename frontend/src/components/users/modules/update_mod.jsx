@@ -16,9 +16,13 @@ import { editAction, revealShowPage } from '../../../jquery/jquery-ops';
 const UpdateMod = (props) => {
     const { currentUser, updateEmail, updatePassword, updateEmailAndPassword } = useAuth();
     const emailRef = useRef();
-    const passwordRef = useRef(); 
+    const passwordRef = useRef();
+    const phoneRef = useRef();
+    const zipRef = useRef();
     const passwordConfirmRef = useRef();
     const [email, setEmail] = useState(currentUser.email);
+    const [phone, setPhone] = useState(props.user.cell_phone);
+    const [zip, setZip] = useState(props.user.zip_code);
     // const [password, setPassword] = useState(currentUser.password);
     const [error, setError] = useState('');
     const [update, setUpdate] = useState(false);
@@ -27,10 +31,14 @@ const UpdateMod = (props) => {
     let btnTuple = ["edit", "update"];
     const [pI, setPI] = useState(0);
     const [eI, setEI] = useState(0);
-    const formBtns = { email: btnTuple, password: btnTuple}
+    const [phI, setPHI] = useState(0);
+    const [zI, setZI] = useState(0);
+    const formBtns = { email: btnTuple, password: btnTuple, phone: btnTuple, 
+                        zip: btnTuple}
 
     useEffect(() => {
         props.getUser(email);
+        debugger;
 
     }, [update]) 
 
@@ -75,9 +83,9 @@ const UpdateMod = (props) => {
         const user = {
             full_name: props.user.full_name,
             gender: props.user.gender,
-            cell_phone: props.user.cell_phone,
+            cell_phone: phone,
             date_of_birth: props.user.date_of_birth,
-            zip_code: props.user.zip_code,
+            zip_code: zip,
             email: email,
             id: props.user.id
         }
@@ -85,17 +93,17 @@ const UpdateMod = (props) => {
 
         const updateSequence = async (updateEmail) => {
             props.updateUser(user);
-            updateEmail(email);
+            await updateEmail(email);
         }
         
             
         if (emailRef.current.value !== currentUser.email) {
             updateSequence(updateEmail)
-                .then( update ? setUpdate(false) : setUpdate(true))
+                .then( () => (update ? setUpdate(false) : setUpdate(true)))
             
         } else {
             props.updateUser(user)
-                .then( update ? setUpdate(false) : setUpdate(true))
+                .then( () => (update ? setUpdate(false) : setUpdate(true)))
         }
         
     }
@@ -108,20 +116,51 @@ const UpdateMod = (props) => {
                     <div id="db-data">
                         <div id="db-left">
                             <div id="ud-phone">
-                                <form action="">
-                                    <p><span><img src={phoneImg} alt="" />&nbsp;&nbsp;</span>
-                                    {props.user.cell_phone}
+                                <form id="phone-form">
+                                    <p className="update-phone-txt"
+                                    ><span><img src={phoneImg} alt="phone"/>&nbsp;&nbsp;</span>
+                                    {phone}
                                     </p>
-                                    <input style={{display:"none"}} type="tel"
+                                    <input className="update-phone-input"
+                                     ref={phoneRef}
+                                        onChange={(e) =>
+                                            setPhone(e.target.value)}
+                                    type="tel"
                                         pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-                                        placeholder={`${props.user.cell_phone}`}
+                                        defaultValue={`${props.user.cell_phone}`}
                                     />
+                                    <button className="phone"
+                                        onClick={(e) => {
+                                            phI === 0 ? setPHI(1) : setPHI(0)
+                                            editAction(e, phI);
+                                        }}
+                                    >{formBtns.phone[phI]}</button>
                                 </form>
                             </div>
                             <div id="ud-gender"></div>
                         </div>
                         <div id="db-right">
-                            <div id="ud-zip"></div>
+                            <div id="ud-zip">
+                                <form id="zip-form">
+                                    <p className="update-zip-txt"
+                                    ><span><img src={markerImg} alt="zip" />&nbsp;&nbsp;</span>
+                                        {zip}
+                                    </p>
+                                    <input className="update-zip-input"
+                                        ref={zipRef}
+                                        onChange={(e) =>
+                                            setZip(e.target.value)}
+                                        type="text"
+                                        defaultValue={`${props.user.zip_code}`}
+                                    />
+                                    <button className="zip"
+                                        onClick={(e) => {
+                                            zI === 0 ? setZI(1) : setZI(0)
+                                            editAction(e, zI);
+                                        }}
+                                    >{formBtns.zip[zI]}</button>
+                                </form>
+                            </div>
                             <div id="ud-dob"></div>
                         </div>
                     </div>
