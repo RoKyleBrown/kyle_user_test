@@ -26,11 +26,31 @@ router.get('/', async (req, res) => {
 
 router.get(`/:email`, async (req, res) => {
 
-    User.findOne({where: { email: req.params.email }})
+    await User.findOne({where: { email: req.params.email }})
         .then(user => {
             res.json(user)
         })
         .catch(err => res.status(404).json({ nousersfound: 'No users found' }));
+})
+
+router.patch(`/edit`, (req, res) => {
+    console.log(req.body)
+    console.log(req.params)
+
+    User.update(
+        {
+            full_name: req.body.full_name,
+            gender: req.body.gender,
+            cell_phone: req.body.cell_phone,
+            date_of_birth: req.body.date_of_birth,
+            zip_code: req.body.zip_code,
+            email: req.body.email.toLowerCase()
+        }, 
+
+        { where: {id: req.body.id} }
+    )
+    .then(user => res.json(user))
+    .catch(err => res.status(404).json(err))
 })
 
 

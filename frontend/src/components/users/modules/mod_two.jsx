@@ -11,7 +11,7 @@ import gender from '../../../assets/gender.png';
 const ModTwo = (props) => {
     
     return (
-        <div className="mod2">
+        <div className="mod2 change" >
             <div className="top">
                 
                 <h3>About Me</h3>

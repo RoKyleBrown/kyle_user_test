@@ -5,8 +5,9 @@ import ModOne from './modules/mod_one';
 import aviBack from '../../assets/avi_back.png';
 import ModTwo from './modules/mod_two';
 import burger from '../../assets/burger.png';
-import { dropDown } from '../app';
+import { dropDown, revealEditPage } from '../../jquery/jquery-ops';
 import { useAuth } from '../../contexts/auth-context';
+import UpdateMod from './modules/update_mod';
 
 const UserShow = (props) => {
     const [isLoading, setIsLoading] = useState(true);
@@ -52,7 +53,12 @@ const UserShow = (props) => {
                                 <img className="avi" src={props.user.photos} alt="avitar" />
                             </div>
                             <img className="avi-back" src={aviBack} alt="avi-back" />
-                            <div id="name-contain"><h2>{props.user.full_name}</h2></div>
+                            <div id="name-contain">
+                                <h2>{props.user.full_name}</h2>
+                                <h3
+                                    onClick={() => {revealEditPage()}}
+                                >Edit Profile</h3>
+                            </div>
                         </div>
                         <div className="mod-image">
                             <ModOne />
@@ -61,6 +67,10 @@ const UserShow = (props) => {
                     </div>
                     <div id="mod2-contain">
                         <ModTwo user={props.user}/>
+                        <UpdateMod updateUser={props.updateUser} 
+                                 user={props.user} 
+                                 getUser={props.getUser}
+                                 />
                     </div>
                     {/* info */}
                 </div>

@@ -1,6 +1,6 @@
 import UserShow from './user_show';
 import { connect } from 'react-redux';
-import { getUser } from '../../actions/user_actions';
+import { getUser, updateUser } from '../../actions/user_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -12,7 +12,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getUser: user => dispatch(getUser(user))
+        getUser: user => dispatch(getUser(user)),
+        updateUser: user => dispatch(updateUser(user))
     }
 }
 

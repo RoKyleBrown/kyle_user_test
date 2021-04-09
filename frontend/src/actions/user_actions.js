@@ -21,6 +21,11 @@ export const getUsers = () => dispatch => {
 };
 
 export const getUser = (email) => dispatch => {
-
+            
     return APIUtil.getUser(email).then(user => dispatch(receiveUsers(user)))
+};
+
+export const updateUser = (user) => dispatch => {
+
+    return APIUtil.updateUser(user).then(user => dispatch(receiveUser(user)))
 };

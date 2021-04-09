@@ -1,0 +1,124 @@
+
+
+.update-mod-a {
+    display: none;
+}
+.update-mod-b {
+    display: block;
+}
+
+
+/* #save{ 
+    margin-top: 20px;
+} */
+
+.update-form{
+    height: auto;
+    margin-top: 10px;
+}
+
+.update-form p {
+    width: 256px;
+    /* padding: 1px 2px 1px 2px; */
+    margin-right: 23px;
+    font-size: 20px;
+    margin: 0;
+    margin-right: 23px;
+}
+
+.update-form #input {
+    padding: 0;
+    font-size: 20px;
+    margin-right: 23px;
+}
+
+.update-form div:first-child {
+    display: flex;
+    align-items: center;
+}
+
+#update-back {
+    display: block;
+    margin-bottom: 20px;
+}
+
+#update-btn {
+    border-radius: 5px;
+    height: 20px;
+    width: 100px;
+    background-color: black;
+}
+
+#update-flex {
+    justify-content: center;
+}
+
+.update-pwd-txt-b,
+.update-email-txt-b  {
+    display: none;
+}
+
+.update-email-txt,
+ .update-email-txt-b {
+     border-bottom: 1px solid rgba(231, 213, 213, 0);
+ }
+
+.update-pwd-input,
+.update-email-input {
+    display: none;
+}
+
+.update-pwd-input-b,
+.update-email-input-b {
+    display: block;
+}
+
+#pwd-input-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.pw-btn-open{
+    display: flex;
+    align-items: flex-end;
+    height: 48px;
+}
+
+#update-save {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#update-save button {
+    font-family: Helvetica, sans-serif;
+    color: black;
+    width: 80px;
+    background-color: white;
+    border-radius: 4px;
+    border: none;
+}
+
+#update-save button:first-child {
+    background-color: #673ab7;
+    color: white;
+}
+
+#db-data {
+    width: 100%;
+    height: 50%;
+    background-color: teal;
+    display: flex;
+}
+
+#db-left {
+    width: 50%;
+    height: 100%;
+    background-color: green;
+}
+#db-right {
+    width: 50%;
+    height: 100%;
+    background-color: fuchsia;
+}

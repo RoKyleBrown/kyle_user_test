@@ -18,6 +18,21 @@ export const AuthProvider = ({ children }) => {
     const login = (email, password) => {
         return auth.signInWithEmailAndPassword(email, password)
     }
+    const updateEmail = (email) => {
+
+        return currentUser.updateEmail(email)
+    }
+    const updatePassword = ( password ) => {
+        
+        return currentUser.updatePassword(password)
+    }
+
+    const updateEmailAndPassword = async (email, password ) => {
+        
+        return (
+            [ currentUser.updateEmail(email),  currentUser.updatePassword(password)]
+            )
+        }
 
     const logout = () => {
         return auth.signOut()
@@ -45,12 +60,15 @@ export const AuthProvider = ({ children }) => {
         currentUser,
         signup,
         login,
-        logout
+        logout,
+        updateEmail,
+        updatePassword,
+        updateEmailAndPassword
     }
 
     return (
         <AuthContext.Provider value={value}>
-            {children}
+            {!loading && children}
         </AuthContext.Provider>
     )
 }

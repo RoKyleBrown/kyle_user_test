@@ -88,7 +88,7 @@ html {
 
 
 
-.burger {
+.burger, .burger-open {
     display: block;
     filter: drop-shadow(1px 1px 2px rgba(255, 255, 255, .4));
 }
@@ -154,12 +154,27 @@ html {
     z-index: 8;
     position: absolute;
     width: 100%;
+    height: 10%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     font-family: Helvetica, sans-serif;
     font-size: 13px;
     color: white;
+}
+
+#name-contain h2, #name-contain h3  {
+    margin: 0;
+}
+
+#name-contain h3 {
+    color: gray;
+    font-size: 11px;
+}
+
+#name-contain h3:hover {
+    cursor: pointer;
 }
 
 .avi-back {
@@ -257,4 +272,5 @@ html {
         height: 100vh;
     }
 }
+
 

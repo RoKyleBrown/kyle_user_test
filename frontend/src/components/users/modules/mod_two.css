@@ -1,9 +1,20 @@
 .mod2 {
     height: 100%;
     width: 100%;
-    display: flex;
     flex-direction: column;
     font-family: Helvetica, sans-serif;
+}
+
+.mod-2-b {
+    display: none;
+}
+
+.change {
+    display: block;
+}
+
+.change-b {
+    display: none;
 }
 
 .mod2 .top {
