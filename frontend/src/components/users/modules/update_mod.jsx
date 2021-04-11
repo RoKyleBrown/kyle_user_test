@@ -23,11 +23,9 @@ const UpdateMod = (props) => {
     const [email, setEmail] = useState(currentUser.email);
     const [phone, setPhone] = useState(props.user.cell_phone);
     const [zip, setZip] = useState(props.user.zip_code);
-    // const [password, setPassword] = useState(currentUser.password);
     const [error, setError] = useState('');
     const [update, setUpdate] = useState(false);
     const [loading, setLoading] = useState(false)
-    const history = useHistory();
     let btnTuple = ["edit", "update"];
     const [pI, setPI] = useState(0);
     const [eI, setEI] = useState(0);
@@ -38,7 +36,6 @@ const UpdateMod = (props) => {
 
     useEffect(() => {
         props.getUser(email);
-        debugger;
 
     }, [update]) 
 
@@ -110,7 +107,7 @@ const UpdateMod = (props) => {
     
     return (
         <div className="mod2 update-mod-a">
-            <div className="top">
+            <div className="top" id="update-top">
                 <div className="auth-back" id="update-back">
 
                     <div id="db-data">
@@ -126,7 +123,8 @@ const UpdateMod = (props) => {
                                         onChange={(e) =>
                                             setPhone(e.target.value)}
                                     type="tel"
-                                        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                                    name="phone"
+                                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                                         defaultValue={`${props.user.cell_phone}`}
                                     />
                                     <button className="phone"
