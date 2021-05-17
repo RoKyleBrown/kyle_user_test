@@ -1,5 +1,6 @@
 import UserShowContainer from './users/user_show_container';
 import UserShowUpdateContainer from './users/user_show_update_container';
+import SearchContainer from './search/search_container';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { AuthProvider } from '../contexts/auth-context';
 import Signup from './auth/signup';
@@ -17,6 +18,7 @@ const App = () => {
                             <Switch>
                                 <PrivateRoute exact path='/' component={UserShowContainer} />
                                 <PrivateRoute path='/update' component={UserShowUpdateContainer} />
+                                <PrivateRoute path='/search' component={SearchContainer} />
                                 <Route path='/signup' component={Signup} />
                                 <Route path='/login' component={Login} />
                             </Switch>

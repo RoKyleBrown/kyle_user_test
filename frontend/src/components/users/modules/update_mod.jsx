@@ -121,7 +121,8 @@ const UpdateMod = (props) => {
                                     <input className="update-phone-input"
                                      ref={phoneRef}
                                         onChange={(e) =>
-                                            setPhone(e.target.value)}
+                                            setPhone(e.target.value)
+                                        }
                                     type="tel"
                                     name="phone"
                                         pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"

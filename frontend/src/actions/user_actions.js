@@ -29,3 +29,8 @@ export const updateUser = (user) => dispatch => {
 
     return APIUtil.updateUser(user).then(user => dispatch(receiveUser(user)))
 };
+
+export const findUsers = (query) => dispatch => {
+
+    return APIUtil.findUsers(query).then(users => dispatch(receiveUsers(users)))
+};

@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require('../../config/database');
 const User = require('../../models/user');
+const { Op } = require('sequelize');
 
 router.get("/test", (req, res) => res.json({ msg: "This is the user route" }));
 
@@ -34,8 +35,6 @@ router.get(`/:email`, async (req, res) => {
 })
 
 router.patch(`/edit`, (req, res) => {
-    console.log(req.body)
-    console.log(req.params)
 
     User.update(
         {
@@ -52,6 +51,25 @@ router.patch(`/edit`, (req, res) => {
     .then(user => res.json(user))
     .catch(err => res.status(404).json(err))
 })
+router.get(`/search/:query`, (req, res) => {
+
+    
+    const term   = req.params.query;
+    console.log(term)
+
+    User.findAll({where:{
+                    [Op.or]: [
+                        {full_name: {[Op.like]: `%${term}%`}},
+                        {cell_phone: {[Op.like]: `%${term}%`}},
+                        {email: {[Op.like]: `%${term}%`}},
+                    ]
+                }
+            })
+        .then(users => {
+            res.json(users)
+        })
+        .catch(err => res.status(404).json({ nousersfound: 'No users found' }));
+    })
 
 
 
